@@ -1,24 +1,25 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - bower --version
-  - npm install phantomjs-prebuilt
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g bower
+- bower --version
+- npm install phantomjs-prebuilt
+- phantomjs --version
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: gd92bYbdMqtoZHphnbJMCtxzEmB3WSjZYk5ywKoU1o+j9QtqGiK2yjGJtHsr+X/KleIFOACtFf7W2gAQKDxzLLNtl94qPNzRFcxJTt9yoMXs4WPVZuO0MeqrmIkKRj/KrN5ehBxplKwgA8K7FD1Altn/nJYxnfaszpt7EecZJUiNK8gowsHOwZ6F9bt+AbuxNexdvvGW83ETI1iPo+hyZUJ70g3f8GgxoGOBH73EWxPh13KCDeUOv6AeYKgEZShnBMCgylP4VD6b9irp6TvzsFRwxN6gx5o6PD61kWl9VclcBbcrCKC/xLZq54SZ4pZvQ5PvWkwcHpoHrV7WZkrPQyXmPCezf6i8mrddPMrMUeSnopQgd52tceLWotlpSZ2xUqoAxH+pwugTXIq2nYHuOeOzzAaqsiGjZL7mGehq6Yh2L18B+w9d3L3+75Mh5ASM4fWZ0rPybuWCKJYZsu2elxx68iSsnfvWrlNGDOj18tGfKXKiqn7zrNndY6YNu6V5EQweDPYGR3yHVSBGfEtUw38xcIOplYA2dY/pJJOVxrznh9jBlwTX7TI41gPceY9p+5TQVkBhretD8GcO9PTLAh7NYP5OxmDB7RE6Jc7Bf5vQ+tsnKjtMCGoxjAQ/J15TEG+tWGxLwn51oXD5lwXlTN1KOVUgEWgl3j8zNRqU0BI=
+  app: sheltered-beach-19768
+  on:
+    repo: AbdullahDahmash/peep-stack-ui-tutorial
