@@ -10,6 +10,7 @@ Router.map(function () {
   this.route('app', function () {})
   this.route('auth', function () {
     this.route('register')
+    this.route('login');
   })
 })
 
