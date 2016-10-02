@@ -1,6 +1,6 @@
 /* jshint node: true */
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'peepchat',
     environment: environment,
@@ -12,12 +12,21 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    'ember-simple-auth': {
+      authenticationRoute: 'auth.login',
+      routeIfAlreadyAuthenticated: 'app.index',
+      routeAfterAuthentication: 'app.index'
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    DS: {
+      host: 'http://localhost:4000',
+      namespace: 'api'
     }
-  };
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -29,18 +38,18 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.locationType = 'none';
+    ENV.locationType = 'none'
 
     // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = false;
-    ENV.APP.LOG_VIEW_LOOKUPS = false;
+    ENV.APP.LOG_ACTIVE_GENERATION = false
+    ENV.APP.LOG_VIEW_LOOKUPS = false
 
-    ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.rootElement = '#ember-testing'
   }
 
   if (environment === 'production') {
-
+    ENV.DS.host = 'https://warm-springs-47881.herokuapp.com/'
   }
 
-  return ENV;
-};
+  return ENV
+}
