@@ -5,7 +5,7 @@ moduleFor('route:auth/register', 'Unit | Route | auth/register', {
   // needs: ['controller:foo']
 });
 
-test('it exists', function(assert) {
+test('it exists', function (assert) {
   let route = this.subject();
   assert.ok(route);
 });

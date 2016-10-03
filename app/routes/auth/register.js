@@ -4,7 +4,7 @@ const { inject, Route } = Ember;
 
 export default Route.extend({
   flashMessages: inject.service(),
-  acttions: {
+  actions: {
     doRegister () {
       this.get('currentModel').save().then(() => {
         this.transitionTo('auth.login');
