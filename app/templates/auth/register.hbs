@@ -1,1 +1,8 @@
-{{outlet}}
+<div class="container">
+  <div class="row">
+    <div class="col s12 m8 offset-m2">
+      {{register-card
+          onsubmit=(route-action 'doRegister')}}
+    </div>
+  </div>
+</div>
