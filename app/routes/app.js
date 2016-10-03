@@ -1,14 +1,14 @@
-import Ember from 'ember'
-import config from '../config/environment'
-import fetch from 'ember-network/fetch'
+import Ember from 'ember';
+import config from '../config/environment';
+import fetch from 'ember-network/fetch';
 
-const { Route, inject } = Ember
+const { Route, inject } = Ember;
 
 export default Route.extend({
   session: inject.service(),
   beforeModel () {
     if (!this.get('session.isAuthenticated')) {
-      this.transitionTo('auth.login')
+      this.transitionTo('auth.login');
     }
   },
   afterModel () {
@@ -17,11 +17,11 @@ export default Route.extend({
       headers: {
         'Authorization': `Bearer ${this.get('session').get('session.content.authenticated.access_token')}`
       }
-    }).then(raw => {
-      return raw.json().then(data => {
-        const currentUser = this.store.push(data)
-        this.set('session.currentUser', currentUser)
-      })
-    })
+    }).then((raw) => {
+      return raw.json().then((data) => {
+        const currentUser = this.store.push(data);
+        this.set('session.currentUser', currentUser);
+      });
+    });
   }
-})
+});

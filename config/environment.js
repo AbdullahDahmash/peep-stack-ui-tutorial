@@ -25,8 +25,12 @@ module.exports = function (environment) {
     DS: {
       host: 'http://localhost:4000',
       namespace: 'api'
+    },
+    flashMessageDefaults: {
+      timeout: 3000,
+      extendedTimeout: 375
     }
-  }
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -38,18 +42,18 @@ module.exports = function (environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.locationType = 'none'
+    ENV.locationType = 'none';
 
     // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = false
-    ENV.APP.LOG_VIEW_LOOKUPS = false
+    ENV.APP.LOG_ACTIVE_GENERATION = false;
+    ENV.APP.LOG_VIEW_LOOKUPS = false;
 
-    ENV.APP.rootElement = '#ember-testing'
+    ENV.APP.rootElement = '#ember-testing';
   }
 
   if (environment === 'production') {
-    ENV.DS.host = 'https://warm-springs-47881.herokuapp.com/'
+    ENV.DS.host = 'https://warm-springs-47881.herokuapp.com/';
   }
 
-  return ENV
-}
+  return ENV;
+};
