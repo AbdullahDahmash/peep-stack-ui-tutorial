@@ -8,7 +8,7 @@ export const email = [
 export const password = [
   validator('presence', true),
   validator('length', {
-    min: 4,
+    min: 8,
     max: 24
   })
 ];

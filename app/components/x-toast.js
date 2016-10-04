@@ -8,7 +8,7 @@ const {
 
 export default Component.extend({
   classNames: ['material-toast', 'toast'],
-  classNamesBindings: ['active', 'exiting', 'color'],
+  classNameBindings: ['active', 'exiting', 'color'],
   active: false,
   color: computed('content.type', function () {
     switch (this.get('content.type')) {
@@ -19,11 +19,10 @@ export default Component.extend({
       default: return '';
     }
   }),
-
   exiting: readOnly('content.exiting'),
 
   _destroyFlashMessage () {
-    const flash = getWithDefault(this, 'contnet', false);
+    const flash = getWithDefault(this, 'content', false);
     if (flash) {
       flash.destroyMessage();
     }
