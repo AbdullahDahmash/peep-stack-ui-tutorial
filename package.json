@@ -53,7 +53,6 @@
     "ember-route-action-helper": "2.0.0",
     "ember-simple-auth": "git+https://github.com/simplabs/ember-simple-auth.git#fa949b3d5801f4fd4c12f4cee11a2cb52d649bec",
     "ember-truth-helpers": "1.2.0",
-    "ember-welcome-page": "^1.0.1",
     "loader.js": "^4.0.1",
     "node-sass": "^3.10.1"
   }

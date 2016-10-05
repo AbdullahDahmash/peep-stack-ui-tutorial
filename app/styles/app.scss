@@ -5,6 +5,14 @@ body {
   background-color: color('indigo', 'darken-2');
 }
 
+.create-room {
+  .col {
+    .btn-flat {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
 .toasts {
   display:block;
   position: fixed;
